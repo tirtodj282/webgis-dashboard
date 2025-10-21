@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard WebGIS Kekeringan Indonesia</title>
+
+  <!-- Leaflet (CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Leaflet Control Search -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-search/dist/leaflet-search.min.css" />
+  <script src="https://unpkg.com/leaflet-control-search/dist/leaflet-search.min.js"></script>
+
+  <!-- Leaflet Heat -->
+  <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🌍 Dashboard WebGIS Kekeringan Indonesia</h1>
+    <p class="subtitle">Visualisasi interaktif — Analisis dampak perubahan iklim terhadap kekeringan</p>
+  </header>
+
+  <div id="dashboard">
+    <div id="left-panel">
+      <div id="map"></div>
+
+      <div id="controls">
+        <label for="tahun">Pilih Tahun:</label>
+        <select id="tahun">
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023" selected>2023</option>
+        </select>
+
+        <div class="btns">
+          <button id="toggleHeat">🔥 Heatmap</button>
+          <button id="addBuffer">📍 Buffer 100 km</button>
+        </div>
+      </div>
+    </div>
+
+    <aside id="right-panel">
+      <div class="card">
+        <canvas id="chart"></canvas>
+      </div>
+
+      <div id="info" class="card">
+        <h3>Petunjuk</h3>
+        <p>Klik wilayah pada peta untuk melihat tren indeks kekeringan dan data cuaca singkat (menggunakan Open-Meteo).</p>
+        <div id="details">
+          <p>Belum ada wilayah dipilih.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <small>© 2025 Dashboard WebGIS | Data contoh untuk demonstrasi — Sesuaikan dengan data nyata untuk penggunaan operasional.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
